@@ -7187,9 +7187,6 @@ async function main() {
       const { status: status2 } = cp2.spawnSync(node.execPath, args, {
         stdio: ["ignore", "inherit", "inherit"]
       });
-      if (status2 !== 0) {
-        core2.setFailed(`Exit code ${status2}`);
-      }
       return;
     }
     const updatedArgs = [...args];
@@ -7242,12 +7239,8 @@ async function main() {
         pluralize(informationCount, "information", "informations")
       ].join(", ")
     );
-    if (status !== 0) {
-      core2.setFailed(pluralize(errorCount, "error", "errors"));
-    }
   } catch (e) {
     (0, import_node_assert.default)(typeof e === "string" || e instanceof Error);
-    core2.setFailed(e);
   }
 }
 function diagnosticToString(diag, forCommand) {

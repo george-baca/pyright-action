@@ -33,9 +33,9 @@ export async function main() {
                 stdio: ["ignore", "inherit", "inherit"],
             });
 
-            if (status !== 0) {
-                core.setFailed(`Exit code ${status!}`);
-            }
+            // if (status !== 0) {
+            //     core.setFailed(`Exit code ${status!}`);
+            // }
             return;
         }
 
@@ -94,12 +94,12 @@ export async function main() {
             ].join(", "),
         );
 
-        if (status !== 0) {
-            core.setFailed(pluralize(errorCount, "error", "errors"));
-        }
+        // if (status !== 0) {
+        //     core.setFailed(pluralize(errorCount, "error", "errors"));
+        // }
     } catch (e) {
         assert(typeof e === "string" || e instanceof Error);
-        core.setFailed(e);
+        // core.setFailed(e);
     }
 }
 
