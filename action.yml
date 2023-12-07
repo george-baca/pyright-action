@@ -1,4 +1,4 @@
-name: 'Run pyright'
+name: 'Run pyright on PR'
 description: 'Run pyright'
 author: 'Jake Bailey'
 branding:

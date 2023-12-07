@@ -33,9 +33,6 @@ export async function main() {
                 stdio: ["ignore", "inherit", "inherit"],
             });
 
-            // if (status !== 0) {
-            //     core.setFailed(`Exit code ${status!}`);
-            // }
             return;
         }
 
@@ -93,13 +90,8 @@ export async function main() {
                 pluralize(informationCount, "information", "informations"),
             ].join(", "),
         );
-
-        // if (status !== 0) {
-        //     core.setFailed(pluralize(errorCount, "error", "errors"));
-        // }
     } catch (e) {
         assert(typeof e === "string" || e instanceof Error);
-        // core.setFailed(e);
     }
 }
 
